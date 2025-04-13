@@ -1,0 +1,77 @@
+[2025-04-09 15:32:04,929] INFO django.utils.autoreload - Watching for file changes with StatReloader
+[2025-04-09 15:32:47,450] INFO django.utils.autoreload - C:\Users\Sagar A\clinicms_final_full_project\clinicms\main\views.py changed, reloading.
+[2025-04-09 15:32:48,206] INFO django.utils.autoreload - Watching for file changes with StatReloader
+[2025-04-09 15:38:14,152] INFO django.utils.autoreload - Watching for file changes with StatReloader
+[2025-04-09 15:38:18,746] INFO django.server - "GET /receptionist/dashboard/ HTTP/1.1" 200 4459
+[2025-04-09 15:38:18,762] INFO django.server - "GET /static/css/styles.css HTTP/1.1" 304 0
+[2025-04-09 15:38:21,880] ERROR django.request - Internal Server Error: /receptionist/add-patient/
+Traceback (most recent call last):
+  File "C:\Users\Sagar A\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sagar A\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\Sagar A\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view main.views.add_patient didn't return an HttpResponse object. It returned None instead.
+[2025-04-09 15:38:21,892] ERROR django.server - "GET /receptionist/add-patient/ HTTP/1.1" 500 65015
+[2025-04-09 15:38:42,735] ERROR django.request - Internal Server Error: /receptionist/add-patient/
+Traceback (most recent call last):
+  File "C:\Users\Sagar A\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sagar A\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\Sagar A\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view main.views.add_patient didn't return an HttpResponse object. It returned None instead.
+[2025-04-09 15:38:42,735] ERROR django.server - "GET /receptionist/add-patient/ HTTP/1.1" 500 65015
+[2025-04-09 15:38:46,082] INFO django.server - "GET /receptionist/patients/ HTTP/1.1" 200 2325
+[2025-04-09 15:38:48,419] INFO django.server - "GET /add-billing/ HTTP/1.1" 200 2528
+[2025-04-09 15:38:49,996] INFO django.server - "GET /list-billing/ HTTP/1.1" 200 2432
+[2025-04-09 15:38:51,413] ERROR django.request - Internal Server Error: /receptionist/add-patient/
+Traceback (most recent call last):
+  File "C:\Users\Sagar A\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sagar A\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\Sagar A\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view main.views.add_patient didn't return an HttpResponse object. It returned None instead.
+[2025-04-09 15:38:51,414] ERROR django.server - "GET /receptionist/add-patient/ HTTP/1.1" 500 65005
+[2025-04-09 15:40:29,047] INFO django.utils.autoreload - C:\Users\Sagar A\clinicms_final_full_project\clinicms\main\views.py changed, reloading.
+[2025-04-09 15:40:29,798] INFO django.utils.autoreload - Watching for file changes with StatReloader
+[2025-04-09 15:40:53,071] INFO django.utils.autoreload - C:\Users\Sagar A\clinicms_final_full_project\clinicms\main\views.py changed, reloading.
+[2025-04-09 15:40:53,810] INFO django.utils.autoreload - Watching for file changes with StatReloader
+[2025-04-09 15:40:59,372] INFO django.server - "GET /receptionist/add-patient/ HTTP/1.1" 200 2688
+[2025-04-09 15:41:01,520] INFO django.server - "GET /receptionist/add-patient/ HTTP/1.1" 200 2688
+[2025-04-09 15:41:02,395] INFO django.server - "GET /receptionist/patients/ HTTP/1.1" 200 2325
+[2025-04-09 15:41:03,679] INFO django.server - "GET /add-billing/ HTTP/1.1" 200 2528
+[2025-04-09 15:41:04,594] INFO django.server - "GET /list-billing/ HTTP/1.1" 200 2432
+[2025-04-09 15:41:06,011] INFO django.server - "GET /receptionist/dashboard/ HTTP/1.1" 200 4459
+[2025-04-09 15:42:15,885] INFO django.server - "GET /receptionist/add-patient/ HTTP/1.1" 200 2688
+[2025-04-09 15:42:15,909] INFO django.server - "GET /static/css/styles.css HTTP/1.1" 304 0
+[2025-04-09 15:42:40,100] INFO django.server - "POST /receptionist/add-patient/ HTTP/1.1" 302 0
+[2025-04-09 15:42:40,110] INFO django.server - "GET /receptionist/patients/ HTTP/1.1" 200 2725
+[2025-04-09 15:42:57,375] INFO django.server - "GET / HTTP/1.1" 200 3254
+[2025-04-09 15:42:57,428] INFO django.server - "GET /static/images/clinic-bg.jpg HTTP/1.1" 304 0
+[2025-04-09 15:43:13,072] INFO django.server - "POST / HTTP/1.1" 302 0
+[2025-04-09 15:43:13,084] INFO django.server - "GET /doctor/dashboard/ HTTP/1.1" 200 2813
+[2025-04-09 15:43:15,824] INFO django.server - "GET /doctor/add-prescription/ HTTP/1.1" 200 2510
+[2025-04-09 15:44:55,927] INFO django.server - "POST /doctor/add-prescription/ HTTP/1.1" 302 0
+[2025-04-09 15:44:55,963] INFO django.server - "GET /doctor/prescriptions/ HTTP/1.1" 200 2843
+[2025-04-09 15:45:03,292] INFO django.server - "GET /doctor/add-prescription/ HTTP/1.1" 200 2510
+[2025-04-09 15:45:04,550] INFO django.server - "GET /doctor/dashboard/ HTTP/1.1" 200 2813
+[2025-04-09 15:45:07,013] INFO django.server - "GET /doctor/prescriptions/ HTTP/1.1" 200 2723
+[2025-04-09 15:45:17,439] INFO django.server - "GET /add-billing/ HTTP/1.1" 302 0
+[2025-04-09 15:45:17,442] INFO django.server - "GET / HTTP/1.1" 200 3139
+[2025-04-09 15:45:31,062] INFO django.server - "POST / HTTP/1.1" 302 0
+[2025-04-09 15:45:31,071] INFO django.server - "GET /receptionist/dashboard/ HTTP/1.1" 200 4459
+[2025-04-09 15:45:35,590] INFO django.server - "GET /add-billing/ HTTP/1.1" 200 2565
+[2025-04-09 15:45:47,809] INFO django.server - "POST /add-billing/ HTTP/1.1" 302 0
+[2025-04-09 15:45:47,819] INFO django.server - "GET /list-billing/ HTTP/1.1" 200 3053
+[2025-04-09 15:45:53,554] INFO django.server - "GET /receptionist/dashboard/ HTTP/1.1" 200 4574
+[2025-04-09 15:46:04,199] INFO django.server - "GET /doctor/dashboard/ HTTP/1.1" 302 0
+[2025-04-09 15:46:04,204] INFO django.server - "GET / HTTP/1.1" 200 3139
+[2025-04-09 15:46:08,697] INFO django.server - "GET /receptionist/dashboard/ HTTP/1.1" 200 4459

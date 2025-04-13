@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'doctor_dashboard' %}">🩺 ClinicMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/add_prescription/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'add_prescription' %}">📝 Add Prescription</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/prescription_list/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'prescription_list' %}">📋 View Prescriptions</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-light fw-semibold" href="{% url 'logout' %}">🚪 Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Add Prescription Form -->
+<div class="container mt-5">
+  <div class="card shadow p-4 rounded mb-5">
+    <h3 class="text-center text-success mb-4">📝 Add Prescription</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="text-center mt-3">
+          <button type="submit" class="btn btn-success px-4">Save Prescription</button>
+        </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

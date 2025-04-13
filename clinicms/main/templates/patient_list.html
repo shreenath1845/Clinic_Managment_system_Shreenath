@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'receptionist_dashboard' %}">ClinicMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/add_patient/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'add_patient' %}">➕ Add Patient</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/patient_list/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'patient_list' %}">👁️ View Patients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/add_billing/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'add_billing' %}">💰 Add Billing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/list_billing/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'list_billing' %}">📄 View Billing</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-light fw-semibold" href="{% url 'logout' %}">🚪 Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Patient Table -->
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="text-center text-info mb-4">Patient List</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th><th>Age</th><th>Gender</th><th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in patients %}
+                <tr>
+                    <td>{{ patient.name }}</td>
+                    <td>{{ patient.age }}</td>
+                    <td>{{ patient.gender }}</td>
+                    <td>{{ patient.phone }}</td>
+                    <td>
+      <a href="{% url 'delete_patient' patient.id %}" class="btn btn-danger btn-sm"
+         onclick="return confirm('Are you sure you want to delete this patient?');">Delete</a>
+    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

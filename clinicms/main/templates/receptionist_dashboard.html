@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Bootstrap Navbar -->
+<style media="screen">
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.btn {
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+
+.row.g-4 {
+  margin-top: 40px;
+  justify-content: center;
+}
+
+
+  .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'receptionist_dashboard' %}">ClinicMS</a>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/add_patient/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'add_patient' %}">➕ Add Patient</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/patient_list/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'patient_list' %}">👁️ View Patients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/add_billing/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'add_billing' %}">💰 Add Billing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/list_billing/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'list_billing' %}">📄 View Billing</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-light fw-semibold" href="{% url 'logout' %}">🚪 Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="card shadow p-4 rounded mb-4">
+    <h2 class="text-center text-primary mb-3">👋 Welcome to Receptionist Dashboard</h2>
+    <p class="text-center text-muted">Manage patients and billing with ease using the options below.</p>
+      <p class="text-center text-muted">"Be the reason someone smiles today.".</p>
+        <p class="text-center text-muted">"Behind every great doctor is a receptionist who keeps things running."</p>
+  </div>
+
+  <div class="row g-4">
+    <!-- Add Patient Card -->
+    <div class="col-md-3">
+      <div class="card h-100 text-center shadow-sm border-0 p-3">
+        <div class="card-body">
+          <h5 class="card-title text-success">➕ Add Patient</h5>
+          <p class="card-text">Register new patients into the system.</p>
+          <a href="{% url 'add_patient' %}" class="btn btn-outline-success">Add Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- View Patients Card -->
+    <div class="col-md-3">
+      <div class="card h-100 text-center shadow-sm border-0 p-3">
+        <div class="card-body">
+          <h5 class="card-title text-primary">👁️ View Patients</h5>
+          <p class="card-text">See and manage existing patient records.</p>
+          <a href="{% url 'patient_list' %}" class="btn btn-outline-primary">View List</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Billing Card -->
+    <div class="col-md-3">
+      <div class="card h-100 text-center shadow-sm border-0 p-3">
+        <div class="card-body">
+          <h5 class="card-title text-warning">💰 Add Billing</h5>
+          <p class="card-text">Generate bills for services provided.</p>
+          <a href="{% url 'add_billing' %}" class="btn btn-outline-warning">Add Billing</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- View Billing Card -->
+    <div class="col-md-3">
+      <div class="card h-100 text-center shadow-sm border-0 p-3">
+        <div class="card-body">
+          <h5 class="card-title text-dark">📄 View Billing</h5>
+          <p class="card-text">Check and manage all billing records.</p>
+          <a href="{% url 'list_billing' %}" class="btn btn-outline-dark">View Bills</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

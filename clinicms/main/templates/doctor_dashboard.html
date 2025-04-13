@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'doctor_dashboard' %}">🩺 ClinicMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/add_prescription/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'add_prescription' %}">📝 Add Prescription</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/prescription_list/' %}active bg-light text-primary rounded px-3{% endif %}" href="{% url 'prescription_list' %}">📋 View Prescriptions</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-light fw-semibold" href="{% url 'logout' %}">🚪 Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Doctor Dashboard -->
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h2 class="text-primary">👨‍⚕️ Welcome to Doctor Dashboard Shreenath</h2>
+    <p class="lead text-muted">"Wherever the art of medicine is loved, there is also a love of humanity." – Hippocrates</p>
+  </div>
+
+  <div class="row justify-content-center gap-3">
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm p-4">
+        <h5 class="card-title text-success">📝 Add Prescription</h5>
+        <p class="card-text">Quickly record patient diagnoses and medications.</p>
+        <a href="{% url 'add_prescription' %}" class="btn btn-success">Add</a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm p-4">
+        <h5 class="card-title text-info">📋 View Prescriptions</h5>
+        <p class="card-text">View and manage all patient prescriptions.</p>
+        <a href="{% url 'prescription_list' %}" class="btn btn-info text-white">View</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inspirational Section -->
+  <div class="mt-5 p-4 bg-light rounded shadow-sm">
+    <h4 class="text-center text-secondary mb-3">💡 Health Tip</h4>
+    <blockquote class="blockquote text-center">
+      <p class="mb-0">“An ounce of prevention is worth a pound of cure.”</p>
+      <footer class="blockquote-footer mt-1">Benjamin Franklin</footer>
+    </blockquote>
+  </div>
+</div>
+
+{% endblock %}
